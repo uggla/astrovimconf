@@ -65,6 +65,7 @@ local config = {
       { "tpope/vim-surround" },
       { "preservim/tagbar" },
       { "bronson/vim-trailing-whitespace" },
+      { "rust-lang/rust.vim" },
       -- { "andweeb/presence.nvim" },
       -- {
       --   "ray-x/lsp_signature.nvim",
@@ -223,6 +224,7 @@ local config = {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    vim.g["rustfmt_autosave"] = 1
   end,
 }
 
