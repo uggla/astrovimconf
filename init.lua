@@ -51,7 +51,7 @@ local config = {
   -- Disable AstroNvim ui features
   ui = {
     nui_input = true,
-    telescope_select = true,
+
   },
 
   -- Configure plugins
@@ -66,6 +66,7 @@ local config = {
       { "preservim/tagbar" },
       { "bronson/vim-trailing-whitespace" },
       { "rust-lang/rust.vim" },
+      { "Vimjas/vim-python-pep8-indent" },
       -- { "andweeb/presence.nvim" },
       -- {
       --   "ray-x/lsp_signature.nvim",
