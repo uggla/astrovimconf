@@ -213,6 +213,15 @@ local config = {
       pattern = "*",
       command = "autocmd FileType python setlocal colorcolumn=79",
     })
+
+    vim.api.nvim_create_augroup("remember-cursor-position", { clear = true })
+    vim.api.nvim_create_autocmd("FileType", {
+      desc = "Remember cursor position",
+      group = "remember-cursor-position",
+      pattern = "*",
+      command = [[autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]]
+    })
+
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
