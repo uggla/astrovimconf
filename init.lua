@@ -210,16 +210,16 @@ local config = {
     vim.api.nvim_create_autocmd("FileType", {
       desc = "Add colorcolums at 79",
       group = "columns-python",
-      pattern = "*",
-      command = "autocmd FileType python setlocal colorcolumn=79",
+      pattern = "python",
+      command = "setlocal colorcolumn=79",
     })
 
     vim.api.nvim_create_augroup("remember-cursor-position", { clear = true })
-    vim.api.nvim_create_autocmd("FileType", {
+    vim.api.nvim_create_autocmd("BufReadPost", {
       desc = "Remember cursor position",
       group = "remember-cursor-position",
       pattern = "*",
-      command = [[autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]]
+      command = [[ if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif ]]
     })
 
     -- Set up custom filetypes
