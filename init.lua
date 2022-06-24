@@ -210,7 +210,7 @@ local config = {
     vim.api.nvim_create_autocmd("FileType", {
       desc = "Add colorcolums at 79",
       group = "columns-python",
-      pattern = "python",
+      pattern = {"python", "rst"},
       command = "setlocal colorcolumn=79",
     })
 
