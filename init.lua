@@ -246,6 +246,7 @@ local config = {
     -- Set key bindings
     vim.keymap.set("n", "<C-s>", ":w!<CR>")
     vim.keymap.set("n", "<F4>", ":TagbarToggle<CR>")
+    vim.keymap.set("n", "<esc>", ":noh<return>")
 
     -- Set autocommands
     vim.api.nvim_create_augroup("packer_conf", { clear = true })
