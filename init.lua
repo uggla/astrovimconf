@@ -67,6 +67,13 @@ local config = {
       { "bronson/vim-trailing-whitespace" },
       { "rust-lang/rust.vim" },
       { "Vimjas/vim-python-pep8-indent" },
+      {
+        'phaazon/hop.nvim',
+        branch = 'v2',
+        config = function()
+          require'hop'.setup {}
+        end,
+      },
       -- { "andweeb/presence.nvim" },
       -- {
       --   "ray-x/lsp_signature.nvim",
@@ -154,6 +161,7 @@ local config = {
         ["<leader>"] = {
           -- which-key registration table for normal mode, leader prefix
           -- ["N"] = { "<cmd>tabnew<cr>", "New Buffer" },
+          -- ["²"] = "hop"
         },
       },
     },
@@ -219,6 +227,14 @@ local config = {
     vim.keymap.set("n", "<C-s>", ":w!<CR>")
     vim.keymap.set("n", "<F4>", ":TagbarToggle<CR>")
     vim.keymap.set("n", "<esc>", ":noh<return>")
+    vim.keymap.set("n", "²w", ":lua require'hop'.hint_words()<CR>", { desc = "HopWord" })
+    vim.keymap.set("n", "²c", ":lua require'hop'.hint_char1()<CR>", { desc = "HopChar1" })
+    vim.keymap.set("n", "²l", ":lua require'hop'.hint_lines()<CR>", { desc = "HopLine" })
+    vim.keymap.set("n", "²p", ":lua require'hop'.hint_patterns()<CR>", { desc = "HopPattern" })
+    vim.keymap.set("v", "²w", "<cmd>lua require'hop'.hint_words()<CR>", { desc = "HopWord" })
+    vim.keymap.set("v", "²c", "<cmd>lua require'hop'.hint_char1()<CR>", { desc = "HopChar1" })
+    vim.keymap.set("v", "²l", "<cmd>lua require'hop'.hint_lines()<CR>", { desc = "HopLine" })
+    vim.keymap.set("v", "²p", "<cmd>lua require'hop'.hint_patterns()<CR>", { desc = "HopPattern" })
 
     -- Set autocommands
     vim.api.nvim_create_augroup("packer_conf", { clear = true })
