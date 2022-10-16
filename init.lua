@@ -275,6 +275,10 @@ local config = {
     -- }
     vim.g["rustfmt_autosave"] = 1
     vim.cmd("set spell spelllang=en_us,fr")
+
+    -- Remap terminal <esc>
+    vim.cmd(":tnoremap <Esc> <C-\\><C-n>")
+
   end,
 }
 
