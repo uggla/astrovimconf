@@ -279,6 +279,10 @@ local config = {
     -- Remap terminal <esc>
     vim.cmd(":tnoremap <Esc> <C-\\><C-n>")
 
+    P = function(v)
+      print(vim.inspect(v))
+      return v
+    end
   end,
 }
 
