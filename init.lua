@@ -235,6 +235,15 @@ local config = {
     vim.keymap.set("v", "²c", "<cmd>lua require'hop'.hint_char1()<CR>", { desc = "HopChar1" })
     vim.keymap.set("v", "²l", "<cmd>lua require'hop'.hint_lines()<CR>", { desc = "HopLine" })
     vim.keymap.set("v", "²p", "<cmd>lua require'hop'.hint_patterns()<CR>", { desc = "HopPattern" })
+    vim.defer_fn(
+      function()
+        -- print(vim.api.nvim_win_get_option(0, "diff"))
+        if vim.opt.diff:get() then
+          vim.keymap.set("n", "<leader>1", ":diffget LOCAL<CR>", { desc = "Diffget local" })
+          vim.keymap.set("n", "<leader>2", ":diffget BASE<CR>", { desc = "Diffget base" })
+          vim.keymap.set("n", "<leader>3", ":diffget REMOTE<CR>", { desc = "Diffget remote" })
+        end
+      end, 500)
 
     -- Set autocommands
     vim.api.nvim_create_augroup("packer_conf", { clear = true })
