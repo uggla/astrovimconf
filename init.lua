@@ -67,6 +67,7 @@ local config = {
       { "bronson/vim-trailing-whitespace" },
       { "rust-lang/rust.vim" },
       { "Vimjas/vim-python-pep8-indent" },
+      { "lvimuser/lsp-inlayhints.nvim" },
       {
         'phaazon/hop.nvim',
         branch = 'v2',
@@ -188,9 +189,12 @@ local config = {
     servers = {
       -- "pyright"
     },
+    -- skip_setup = { "rust_analyzer" },
     -- add to the server on_attach function
-    -- on_attach = function(client, bufnr)
-    -- end,
+    on_attach = function(client, bufnr)
+      require("lsp-inlayhints").setup()
+      require("lsp-inlayhints").on_attach(client, bufnr)
+    end,
 
     -- override the lsp installer server-registration function
     -- server_registration = function(server, opts)
@@ -235,6 +239,7 @@ local config = {
     vim.keymap.set("v", "²c", "<cmd>lua require'hop'.hint_char1()<CR>", { desc = "HopChar1" })
     vim.keymap.set("v", "²l", "<cmd>lua require'hop'.hint_lines()<CR>", { desc = "HopLine" })
     vim.keymap.set("v", "²p", "<cmd>lua require'hop'.hint_patterns()<CR>", { desc = "HopPattern" })
+    vim.keymap.set("n", "<leader>lt", ":lua require('lsp-inlayhints').toggle()<CR>", { desc = "Toggle inlayhints" })
     vim.defer_fn(
       function()
         -- print(vim.api.nvim_win_get_option(0, "diff"))
