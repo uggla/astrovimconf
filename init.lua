@@ -215,6 +215,15 @@ local config = {
       --     },
       --   },
       -- },
+      sumneko_lua = {
+        settings = {
+          Lua = {
+            hint = {
+              enable = true,
+            },
+          },
+        },
+      },
     },
   },
 
