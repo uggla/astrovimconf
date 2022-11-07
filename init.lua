@@ -75,6 +75,7 @@ local config = {
           require 'hop'.setup {}
         end,
       },
+      { "dpelle/vim-Grammalecte" },
       -- { "andweeb/presence.nvim" },
       -- {
       --   "ray-x/lsp_signature.nvim",
@@ -301,6 +302,8 @@ local config = {
     --   },
     -- }
     vim.g["rustfmt_autosave"] = 1
+    vim.g["grammalecte_cli_py"] = "/usr/bin/grammalecte-cli.py"
+
     vim.cmd("set spell spelllang=en_us,fr")
 
     -- Remap terminal <esc>
