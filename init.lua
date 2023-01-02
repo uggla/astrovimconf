@@ -205,6 +205,15 @@ local config = {
           },
         },
       },
+      pyright = {
+          settings = {
+              python = {
+                  analysis = {
+                      typeCheckingMode = "off",
+                  }
+              }
+          }
+      }
     },
   },
 
