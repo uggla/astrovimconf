@@ -265,7 +265,7 @@ local config = {
       --   end,
       -- },
       { "tpope/vim-surround" },
-      { "rareitems/hl_match_area.nvim" },
+      { "rhysd/conflict-marker.vim" },
       { "bronson/vim-trailing-whitespace" },
       { "Vimjas/vim-python-pep8-indent" },
       { "lvimuser/lsp-inlayhints.nvim" },
