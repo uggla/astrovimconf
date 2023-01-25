@@ -468,6 +468,11 @@ local config = {
       print(vim.inspect(v))
       return v
     end
+
+    -- Disable auto_hlsearch
+    vim.on_key(function()
+    end, vim.api.nvim_create_namespace "auto_hlsearch")
+
   end,
 }
 
