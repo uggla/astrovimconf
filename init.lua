@@ -151,7 +151,7 @@ local config = {
           -- "go",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
-          -- "python",
+          "python",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
@@ -421,6 +421,7 @@ local config = {
     vim.keymap.set("v", "²l", "<cmd>lua require'hop'.hint_lines()<CR>", { desc = "HopLine" })
     vim.keymap.set("v", "²p", "<cmd>lua require'hop'.hint_patterns()<CR>", { desc = "HopPattern" })
     vim.keymap.set("n", "<leader>lt", ":lua require('lsp-inlayhints').toggle()<CR>", { desc = "Toggle inlayhints" })
+    vim.keymap.set("v", "<leader>lb", ":!black-macchiato<CR><CR>", { desc = "Black macchiato" })
     -- vim.defer_fn(
     --   function()
     --     -- print(vim.api.nvim_win_get_option(0, "diff"))
