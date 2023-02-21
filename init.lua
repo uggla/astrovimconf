@@ -267,6 +267,7 @@ local config = {
       { "tpope/vim-surround" },
       { "rhysd/conflict-marker.vim" },
       { "bronson/vim-trailing-whitespace" },
+      { "AndrewRadev/splitjoin.vim" },
       { "Vimjas/vim-python-pep8-indent" },
       { "lvimuser/lsp-inlayhints.nvim" },
       {
