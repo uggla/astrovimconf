@@ -274,7 +274,9 @@ local config = {
         'phaazon/hop.nvim',
         branch = 'v2',
         config = function()
-          require 'hop'.setup {}
+          require 'hop'.setup {
+            multi_windows = true,
+          }
         end,
       },
       { "dpelle/vim-Grammalecte" },
@@ -410,13 +412,23 @@ local config = {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+
+    -- vim.defer_fn(
+    --   function()
+    --       local indent = math.abs(4)
+    --       vim.bo.expandtab = (indent > 0)
+    --       vim.bo.tabstop = indent
+    --       vim.bo.softtabstop = indent
+    --       vim.bo.shiftwidth = indent
+    --   end, 1500)
+
     -- Set key bindings
     vim.keymap.set("n", "<C-s>", ":w!<CR>")
     vim.keymap.set("n", "<esc>", ":noh<return>")
-    vim.keymap.set("n", "²w", ":lua require'hop'.hint_words()<CR>", { desc = "HopWord" })
-    vim.keymap.set("n", "²c", ":lua require'hop'.hint_char1()<CR>", { desc = "HopChar1" })
-    vim.keymap.set("n", "²l", ":lua require'hop'.hint_lines()<CR>", { desc = "HopLine" })
-    vim.keymap.set("n", "²p", ":lua require'hop'.hint_patterns()<CR>", { desc = "HopPattern" })
+    vim.keymap.set("n", "²w", ":lua require'hop'.hint_words({ multi_windows = true })<CR>", { desc = "HopWordMW" })
+    vim.keymap.set("n", "²c", ":lua require'hop'.hint_char1({ multi_windows = true })<CR>", { desc = "HopChar1MW" })
+    vim.keymap.set("n", "²l", ":lua require'hop'.hint_lines({ multi_windows = true })<CR>", { desc = "HopLineMW" })
+    vim.keymap.set("n", "²p", ":lua require'hop'.hint_patterns({ multi_windows = true })<CR>", { desc = "HopPatternMW" })
     vim.keymap.set("v", "²w", "<cmd>lua require'hop'.hint_words()<CR>", { desc = "HopWord" })
     vim.keymap.set("v", "²c", "<cmd>lua require'hop'.hint_char1()<CR>", { desc = "HopChar1" })
     vim.keymap.set("v", "²l", "<cmd>lua require'hop'.hint_lines()<CR>", { desc = "HopLine" })
