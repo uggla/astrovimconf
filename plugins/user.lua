@@ -9,12 +9,29 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
-  { "tpope/vim-surround" },
-  { "rhysd/conflict-marker.vim" },
-  { "bronson/vim-trailing-whitespace" },
-  { "AndrewRadev/splitjoin.vim" },
-  { "Vimjas/vim-python-pep8-indent" },
-  { "lvimuser/lsp-inlayhints.nvim" },
+  {
+    "tpope/vim-surround",
+    lazy = false
+  },
+  {
+    "rhysd/conflict-marker.vim",
+    lazy = false
+  },
+  {
+    "bronson/vim-trailing-whitespace",
+    lazy = false
+  },
+  {
+    "AndrewRadev/splitjoin.vim",
+    lazy = false
+  },
+  {
+    "Vimjas/vim-python-pep8-indent",
+    lazy = false
+  },
+  {
+    "lvimuser/lsp-inlayhints.nvim",
+  },
   {
     'phaazon/hop.nvim',
     branch = 'v2',
@@ -24,5 +41,8 @@ return {
       }
     end,
   },
-  { "dpelle/vim-Grammalecte" },
+  {
+    "dpelle/vim-Grammalecte",
+    lazy = false
+  },
 }
