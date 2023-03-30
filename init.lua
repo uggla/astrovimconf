@@ -149,6 +149,12 @@ return {
     vim.keymap.set("v", "²l", "<cmd>lua require'hop'.hint_lines()<CR>", { desc = "HopLine" })
     vim.keymap.set("v", "²p", "<cmd>lua require'hop'.hint_patterns()<CR>", { desc = "HopPattern" })
     vim.keymap.set("n", "<leader>lt", ":lua require('lsp-inlayhints').toggle()<CR>", { desc = "Toggle inlayhints" })
+    vim.api.nvim_set_keymap(
+      "v",
+      "<leader>r",
+      ":lua require('refactoring').select_refactor()<CR>",
+      { noremap = true, silent = true, expr = false }
+    )
     vim.keymap.set("v", "<leader>lb", ":!black-macchiato<CR><CR>", { desc = "Black macchiato" })
     -- vim.defer_fn(
     --   function()
