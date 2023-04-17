@@ -46,6 +46,10 @@ return {
     lazy = false
   },
   {
+    "mbbill/undotree",
+    lazy = false
+  },
+  {
     "ThePrimeagen/refactoring.nvim",
     lazy = false,
     requires = {

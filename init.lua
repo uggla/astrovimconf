@@ -149,6 +149,7 @@ return {
     vim.keymap.set("v", "²l", "<cmd>lua require'hop'.hint_lines()<CR>", { desc = "HopLine" })
     vim.keymap.set("v", "²p", "<cmd>lua require'hop'.hint_patterns()<CR>", { desc = "HopPattern" })
     vim.keymap.set("n", "<leader>lt", ":lua require('lsp-inlayhints').toggle()<CR>", { desc = "Toggle inlayhints" })
+    vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle, { desc = "UndotreeToggle" })
     vim.api.nvim_set_keymap(
       "v",
       "<leader>r",
