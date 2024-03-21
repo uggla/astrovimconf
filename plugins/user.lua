@@ -50,7 +50,6 @@ return {
   },
   {
     "ThePrimeagen/refactoring.nvim",
-    lazy = false,
     requires = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-treesitter/nvim-treesitter" }
